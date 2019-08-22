@@ -1,6 +1,8 @@
 import Vue from "vue";
 import Router from "vue-router";
-import Home from "./views/Home.vue";
+import EventList from "./views/EventList";
+import EventShow from "./views/EventShow";
+import EventCreate from "./views/EventCreate";
 
 Vue.use(Router);
 
@@ -8,21 +10,18 @@ export default new Router({
   routes: [
     {
       path: "/",
-      name: "home",
-      component: Home
+      name: "event-list",
+      component: EventList
     },
     {
-      path: "/about-us",
-      name: "about",
-      // route level code-splitting
-      // this generates a separate chunk (about.[hash].js) for this route
-      // which is lazy-loaded when the route is visited.
-      component: () =>
-        import(/* webpackChunkName: "about" */ "./views/About.vue")
+      path: "/show",
+      name: "event-show",
+      component: EventShow
     },
     {
-      path: "/about",
-      redirect: { name: "about" }
+      path: "/create",
+      name: "create-event",
+      component: EventCreate
     }
   ]
 });
