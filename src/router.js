@@ -4,6 +4,9 @@ import EventList from './views/EventList';
 import EventShow from './views/EventShow';
 import EventCreate from './views/EventCreate';
 import Error_404 from './views/Error_404';
+import BaseIcon from './components/BaseIcon.vue';
+
+Vue.component('BaseIcon', BaseIcon);
 
 Vue.use(Router);
 
