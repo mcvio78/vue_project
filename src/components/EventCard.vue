@@ -1,6 +1,8 @@
 <template>
-  <div>
-    <h4>{{ title }}</h4>
+  <div class="event-card -shadow">
+		<span class="eyebrow">@{{ event.time}} at {{ event.date}}</span>
+    <h4 class="title">{{ event.title }}</h4>
+		<span>{{ event.attendees.length}} attending</span>
   </div>
 </template>
 
