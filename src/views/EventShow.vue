@@ -4,8 +4,7 @@
 
 <script>
 export default {
-  name: "EventShow.vue",
-  props: ["id"]
+  props: ['id']
 };
 </script>
 

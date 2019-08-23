@@ -5,9 +5,7 @@
 </template>
 
 <script>
-export default {
-  name: "Error_404"
-};
+export default {};
 </script>
 
 <style scoped>
