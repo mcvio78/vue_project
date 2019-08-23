@@ -20,13 +20,12 @@ export default {
     };
   },
   created() {
-    axios
-      .get('http://localhost:3000/events') // Does a get request
+    EventService.getEvents()
       .then(response => {
-        this.events = response.data; // <--- set the events data
+        this.events = response.data;
       })
       .catch(error => {
-        console.log('There was an error:', error.response); // Logs out the error
+        console.log(`There was and error ${error.response}`);
       });
   }
 };
