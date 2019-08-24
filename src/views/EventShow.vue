@@ -31,7 +31,6 @@
     </ul>
   </div>
 </template>
-
 <script>
 import EventService from '@/services/EventService.js';
 
@@ -48,7 +47,7 @@ export default {
         this.event = response.data;
       })
       .catch(error => {
-        console.log(`There was an error ${error.response}`);
+        console.log('There was an error:', error.response);
       });
   }
 };
@@ -74,4 +73,3 @@ export default {
   border-bottom: solid 1px #e5e5e5;
 }
 </style>
-
