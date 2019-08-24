@@ -67,7 +67,10 @@ export default {
 	methods: {
 		createFreshEvent() {
 			const user = this.$store.state.user;
+			const id = Math.floor(Math.random() * 10000000);
+
 			return {
+				id: id,
 				category: '',
 				organizer: user,
 				title: '',
@@ -82,6 +85,10 @@ export default {
 			this.$store
 				.dispatch('createEvent', this.event)
 				.then(() => {
+					this.$router.push({
+						name: 'event-show',
+						params: { id: this.event.id }
+					});
 					this.event = this.createFreshEventObject();
 				})
 				.catch(() => {
