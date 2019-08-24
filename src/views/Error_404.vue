@@ -1,7 +1,7 @@
 <template>
-  <div id="back">
-    <h1>404 Page Not Found.</h1>
-  </div>
+	<div id="back">
+		<h1>404 Page Not Found.</h1>
+	</div>
 </template>
 
 <script>
@@ -10,6 +10,6 @@ export default {};
 
 <style scoped>
 h1 {
-  color: red;
+	color: red;
 }
 </style>

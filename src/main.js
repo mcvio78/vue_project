@@ -6,7 +6,7 @@ import store from './store';
 Vue.config.productionTip = false;
 
 new Vue({
-  router,
-  store,
-  render: h => h(App) //hyperscript
+	router,
+	store,
+	render: h => h(App) //hyperscript
 }).$mount('#app');

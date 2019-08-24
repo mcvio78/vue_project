@@ -6,7 +6,7 @@
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
-		"mockserver": "json-server --watch db.json"
+    "mockserver": "json-server --watch db.json"
   },
   "dependencies": {
     "axios": "^0.19.0",
@@ -15,6 +15,7 @@
     "lodash": "^4.17.11",
     "vue": "^2.6.10",
     "vue-router": "^3.1.2",
+    "vuejs-datepicker": "^1.6.2",
     "vuex": "^3.0.1"
   },
   "devDependencies": {
