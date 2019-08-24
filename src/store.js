@@ -16,7 +16,8 @@ export default new Vuex.Store({
 			'food',
 			'community'
 		],
-		events: []
+		events: [],
+		eventsTotal: 0
 	},
 	mutations: {
 		SET_EVENTS(state, events) {
@@ -24,12 +25,19 @@ export default new Vuex.Store({
 		},
 		ADD_EVENT(state, event) {
 			state.events.push(event);
+		},
+		SET_EVENTS_TOTAL(state, eventsTotal) {
+			state.eventsTotal = eventsTotal;
 		}
 	},
 	actions: {
 		fetchEvents({ commit }, { perPage, page }) {
 			EventService.getEvents(perPage, page)
 				.then(response => {
+					commit(
+						'SET_EVENTS_TOTAL',
+						parseInt(response.headers['x-total-count'])
+					);
 					commit('SET_EVENTS', response.data);
 				})
 				.catch(error => {
