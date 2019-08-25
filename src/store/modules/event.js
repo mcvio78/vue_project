@@ -38,9 +38,14 @@ export const actions = {
 				dispatch('notification/add', notification, { root: true });
 			});
 	},
-	createEvent({ commit }, event) {
+	createEvent({ commit, dispatch }, event) {
 		return EventService.postEvent(event).then(() => {
-			commit('ADD_EVENT', event.data);
+			commit('ADD_EVENT', event);
+			const notification = {
+				type: 'success',
+				message: 'Your event has been created!'
+			};
+			dispatch('notification/add', notification, { root: true });
 		});
 	},
 	fetchEvent({ commit, getters }, id) {
