@@ -1,6 +1,6 @@
 import EventService from '@/services/EventService.js';
 
-export const namespaced = true
+export const namespaced = true;
 
 export const state = {
 	events: [],
@@ -24,14 +24,18 @@ export const mutations = {
 };
 
 export const actions = {
-	fetchEvents({ commit }, { perPage, page }) {
+	fetchEvents({ commit, dispatch }, { perPage, page }) {
 		EventService.getEvents(perPage, page)
 			.then(response => {
 				commit('SET_EVENTS_TOTAL', parseInt(response.headers['x-total-count']));
 				commit('SET_EVENTS', response.data);
 			})
 			.catch(error => {
-				console.log('There was an error:', error.response);
+				const notification = {
+					type: 'error',
+					message: 'There was a problem fetching events: ' + error.message
+				};
+				dispatch('notification/add', notification, { root: true });
 			});
 	},
 	createEvent({ commit }, event) {
