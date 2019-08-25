@@ -34,7 +34,7 @@ export default {
 	},
 	created() {
 		this.perPage = 3;
-		this.$store.dispatch('fetchEvents', {
+		this.$store.dispatch('event/fetchEvents', {
 			perPage: 3, // <-- How many items to display per page
 			page: this.page // <-- What page we're on
 		});
