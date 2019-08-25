@@ -57,7 +57,13 @@ export const actions = {
 					commit('SET_EVENT', response.data);
 				})
 				.catch(error => {
-					console.log('There was an error:', error.response);
+					const notification = {
+						type: 'error',
+						message: 'There was a problem fetching an event: ' + error.message
+					};
+					dispatch('notification/add', notification, {
+						root: true
+					});
 				});
 		}
 	}
