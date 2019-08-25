@@ -39,14 +39,23 @@ export const actions = {
 			});
 	},
 	createEvent({ commit, dispatch }, event) {
-		return EventService.postEvent(event).then(() => {
-			commit('ADD_EVENT', event);
-			const notification = {
-				type: 'success',
-				message: 'Your event has been created!'
-			};
-			dispatch('notification/add', notification, { root: true });
-		});
+		return EventService.postEvent(event)
+			.then(() => {
+				commit('ADD_EVENT', event);
+				const notification = {
+					type: 'success',
+					message: 'Your event has been created!'
+				};
+				dispatch('notification/add', notification, { root: true });
+			})
+			.catch(error => {
+				const notification = {
+					type: 'error',
+					message: 'There was a problem creating your event: ' + error.message
+				};
+				dispatch('notification/add', notification, { root: true });
+			});
+		throw error;
 	},
 	fetchEvent({ commit, getters }, id) {
 		// Send in the getters
