@@ -35,7 +35,7 @@ export default {
 	created() {
 		this.perPage = 3;
 		this.$store.dispatch('event/fetchEvents', {
-			perPage: 3, // <-- How many items to display per page
+			perPage: this.perPage, // <-- How many items to display per page
 			page: this.page // <-- What page we're on
 		});
 	},
@@ -45,7 +45,7 @@ export default {
 			return parseInt(this.$route.query.page) || 1;
 		},
 		hasNextPage() {
-			return this.eventsTotal > this.page * this.perPage;
+			return this.event.eventsTotal > this.page * this.perPage;
 		},
 		...mapState(['event', 'user'])
 	}
