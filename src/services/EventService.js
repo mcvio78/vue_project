@@ -1,7 +1,14 @@
 import axios from 'axios';
 
+const env = require('../../env');
+const NODE_ENV = process.env.NODE_ENV;
+
+const httpProtocol = env[NODE_ENV].url.frontEnd.httpProtocol;
+const serverDomain = env[NODE_ENV].url.frontEnd.serverDomain;
+const baseUrl = `${httpProtocol}${serverDomain}`;
+
 const apiClient = axios.create({
-	baseURL: 'http://localhost:3000',
+	baseURL: baseUrl,
 	withCredentials: false,
 	headers: {
 		Accept: 'application/json',
