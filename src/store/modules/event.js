@@ -54,10 +54,10 @@ export const actions = {
 					message: 'There was a problem creating your event: ' + error.message
 				};
 				dispatch('notification/add', notification, { root: true });
+				throw error;
 			});
-		throw error;
 	},
-	fetchEvent({ commit, getters }, id) {
+	fetchEvent({ commit, getters, dispatch }, id) {
 		// Send in the getters
 		let event = getters.getEventById(id); // See if we already have this event
 
@@ -75,9 +75,7 @@ export const actions = {
 						type: 'error',
 						message: 'There was a problem fetching an event: ' + error.message
 					};
-					dispatch('notification/add', notification, {
-						root: true
-					});
+					dispatch('notification/add', notification, { root: true });
 				});
 		}
 	}

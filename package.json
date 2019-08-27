@@ -14,7 +14,7 @@
     "core-js": "^2.6.9",
     "express": "^4.17.1",
     "json-server": "^0.15.0",
-    "lodash": "^4.17.11",
+    "lodash": "^4.17.15",
     "vue": "^2.6.10",
     "vue-router": "^3.1.2",
     "vuejs-datepicker": "^1.6.2",
@@ -25,7 +25,7 @@
     "@vue/cli-plugin-eslint": "^3.11.0",
     "@vue/cli-service": "^3.11.0",
     "@vue/eslint-config-prettier": "^4.0.1",
-    "babel-eslint": "^10.0.2",
+    "babel-eslint": "^10.0.3",
     "eslint": "^5.16.0",
     "eslint-plugin-vue": "^5.2.3",
     "vue-template-compiler": "^2.6.10"

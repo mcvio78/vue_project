@@ -23,7 +23,7 @@ export default {
 		this.timeout = setTimeout(() => this.remove(this.notification), 5000);
 	},
 	beforeDestroy() {
-		clearTimeout(this.timeout)
+		clearTimeout(this.timeout);
 	},
 	computed: {
 		notificationTypeClass() {

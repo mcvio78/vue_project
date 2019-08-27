@@ -1,14 +1,10 @@
 import axios from 'axios';
+import { URLBackend } from '@/services/URLBackend';
 
-const env = require('../../env');
-const NODE_ENV = process.env.NODE_ENV;
-
-const httpProtocol = env[NODE_ENV].url.frontEnd.httpProtocol;
-const serverDomain = env[NODE_ENV].url.frontEnd.serverDomain;
-const baseUrl = `${httpProtocol}${serverDomain}`;
+console.log('URLBackend: ', URLBackend);
 
 const apiClient = axios.create({
-	baseURL: baseUrl,
+	baseURL: URLBackend,
 	withCredentials: false,
 	headers: {
 		Accept: 'application/json',
