@@ -14,7 +14,7 @@
     "core-js": "^2.6.9",
     "express": "^4.17.1",
     "json-server": "^0.15.0",
-    "lodash": "^4.17.15",
+    "lodash": "^4.17.19",
     "vue": "^2.6.10",
     "vue-router": "^3.1.2",
     "vuejs-datepicker": "^1.6.2",
